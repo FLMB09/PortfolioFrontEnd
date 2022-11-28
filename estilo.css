@@ -33,11 +33,14 @@
 }
 
 .contenedor-header header .logo a{
-    font-family: 'Caveat';
+   font-family: 'Caveat';
     font-size: 36px;
     color: #cf7b0e;
     text-decoration: none;
+    
 }
+
+
 
 .contenedor-header header .logo a:hover{
     /*font-family: 'Caveat';*/
@@ -72,7 +75,7 @@
 
 /*I N I C I O*/
 .inicio{
-    background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
+    background: linear-gradient(to bottom, rgba(30,35,38,.8), rgba(30,35,38,1)),
     url(IMG/fondo.JPG);
     background-size: cover;
     height: 100vh;
@@ -126,6 +129,7 @@
     margin: 40px 5px;
     font-size: 20px;
     transition: .3s;
+    
 }
 .inicio .contenido-banner .redes a:hover{
     background-color: #cf7b0e;
@@ -160,55 +164,66 @@
 .sobremi .fila{
     display: flex;
 }
-.sobremi .fila .col
-{
+.sobremi .fila .col{
     width: 50%;
 }
-.sobremi /*.fila*/ .col h3{
+.sobremi .fila .col h3{
     font-size: 28px;
     font-family: 'Caveat';
     margin-bottom: 25px;
 }
-.sobremi /*.fila*/ .col ul{
+
+.sobremi .fila .col .sub{
+    font-size: 28px;
+    font-family: 'Caveat';
+    margin-bottom: 25px;
+    text-align: right;
+}
+
+/*.sobremi .fila .col ul{
     list-style: none;
 }
-.sobremi /*.fila*/ .col ul li{
+.sobremi .fila .col ul li{
     margin: 12px 0;
 }
-.sobremi /*.fila*/ .col ul li strong{
+.sobremi .fila .col ul li strong{
     display: inline-block;
     color: #cf7b0e;
     width: 130px;
 }
-.sobremi /*.fila*/ .col ul li span{
+.sobremi .fila .col ul li span{
     background-color: #cf7b0e;
     padding: 3px;
     font-weight: bold;
     border-radius: 5px;
-}
-.sobremi /*.fila*/ .col .contenedor-intereses{
+}*/
+.sobremi .fila .col .contenedor-intereses{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;   
+    justify-content: right;
+    align-items: right;
 }
-.sobremi /*.fila*/ .col .contenedor-intereses .interes{
+.sobremi .fila .col .contenedor-intereses .interes{
     width: 100px;
     height: 100px;
     background-color: #252A2E;
     border-radius: 10px;
-    margin: 0 15px 15px 0;
+    /*margin: 0 15px 15px 0;*/
+    margin-left: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: .3s;
-}.sobremi /*.fila*/ .col .contenedor-intereses .interes:hover{
+}
+.sobremi .fila .col .contenedor-intereses .interes:hover{
     background-color: #cf7b0e;
 }
-.sobremi /*.fila*/ .col .contenedor-intereses .interes i{
+.sobremi .fila .col .contenedor-intereses .interes i{
     font-size: 30px;
     margin-bottom: 10px;
 }
-.sobremi button{
+/*.sobremi button{
     cursor: pointer;
     background-color: transparent;
     border: 2px solid #fff;
@@ -220,6 +235,7 @@
     color: #fff;
     position: relative;
     z-index: 10;
+    border-radius: 10px;
 }
 .sobremi button .overlay{
     position: absolute;
@@ -230,10 +246,11 @@
     background-color: #cf7b0e;
     z-index: -1;
     transition: 1s;
+    border-radius: 9px;
 }
 .sobremi button:hover .overlay{
     width: 100%;
-}
+}*/
 
 
 
