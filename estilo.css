@@ -8,19 +8,22 @@
     padding: 0;
 }
  html {
-    /*me perite deslizar cuando hago click en las opciones del menu*/
+    /*me permite deslizar cuando hago click en las opciones del menu*/
     scroll-behavior: smooth;
  }
 
- /*MENU*/
+ /*M E N U*/
 
  .contenedor-header{
     background: #1e2326;
     position: fixed;
     width: 100%;
+    height: 75px;
     top: 0;
     left: 0;
     z-index: 99;
+    border-bottom: 1px solid #cf7b0e;
+    
 }
 
 .contenedor-header header{
@@ -32,24 +35,33 @@
     padding: 15px 20px;
 }
 
-.contenedor-header header .logo a{
-   font-family: 'Caveat';
-    font-size: 36px;
-    color: #cf7b0e;
-    text-decoration: none;
-    
+
+
+.contenedor-header .logo a {
+    display: flex;
+    margin-left: 0;
+}
+.contenedor-header .logo img{
+   width: 150px;
+}
+
+.contenedor-header .logo #logotyping{
+    color: #fff;
+    transition: .5s;
+    padding: 3px; 
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
 }
 
 
-
-.contenedor-header header .logo a:hover{
-    /*font-family: 'Caveat';*/
-    font-weight: bold;
-}
 
 .contenedor-header header ul{
     display: flex;
     list-style: none;
+    margin-bottom: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 .contenedor-header header nav ul li a{
@@ -59,11 +71,14 @@
     padding: 3px;
     transition: .5s;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .contenedor-header header nav ul li a:hover{
     color: #cf7b0e;
-}
+} 
+
+
 .nav-responsive{
     background-color: #cf7b0e;
     color:#fff;
@@ -72,6 +87,63 @@
     cursor: pointer;
     display: none;
 }
+
+
+
+.contenedor-header #btnlogin {
+    color: #cf7b0e;
+    border-color: #cf7b0e;
+    border-radius: 10px;
+    margin-right: 0;
+    
+} 
+
+.contenedor-header #btnlogin:hover {
+    background-color: #cf7b0e;
+    color: #1e2326;
+}
+ /* .contenedor-header #btnsignup{
+    background-color: #cf7b0e;
+    border-color: #cf7b0e;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+ }
+ .contenedor-header #btnsignup:hover{
+    background-color: #ac6202;
+ } */
+
+
+/* SECCION NAV RESPONSIVE */
+@media screen and (max-width:980px){
+    nav{
+        display: none;
+    }
+    .nav-responsive{
+        display: block;
+    }
+    nav.responsive{
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 75px;
+        background-color: #252A2E;
+        
+    }
+    nav.responsive ul{
+        display: block !important;
+    }
+   
+    nav.responsive ul li{
+        border-bottom: 1px solid #fff;
+        padding: 10px 0;
+    } 
+
+}
+
+
+
+
 
 /*I N I C I O*/
 .inicio{
@@ -136,6 +208,7 @@
 }
 
 /*S O B R E  M I*/
+
 .sobremi{
     background-color: #1e2326;
     color: #fff;
@@ -146,7 +219,7 @@
     margin: auto;
 }
 .sobremi h2{
-    font-size: 48px;
+    font-size: 40px;
     font-family: 'Caveat';
     text-align: center;
     padding: 20px 0;
@@ -166,37 +239,43 @@
 }
 .sobremi .fila .col{
     width: 50%;
+    
 }
+
 .sobremi .fila .col h3{
     font-size: 28px;
     font-family: 'Caveat';
     margin-bottom: 25px;
 }
+/* Boton Editar ¿Quién soy?*/
 
-.sobremi .fila .col .sub{
+.sobremi .fila .col ul{
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.sobremi .fila .col li {
+    width: 100%;
+}
+
+.sobremi .fila .col .boton-edit {
+    justify-content: right;
+    display: flex;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+
+.sub{
     font-size: 28px;
     font-family: 'Caveat';
     margin-bottom: 25px;
     text-align: right;
 }
 
-/*.sobremi .fila .col ul{
-    list-style: none;
-}
-.sobremi .fila .col ul li{
-    margin: 12px 0;
-}
-.sobremi .fila .col ul li strong{
-    display: inline-block;
-    color: #cf7b0e;
-    width: 130px;
-}
-.sobremi .fila .col ul li span{
-    background-color: #cf7b0e;
-    padding: 3px;
-    font-weight: bold;
-    border-radius: 5px;
-}*/
+
 .sobremi .fila .col .contenedor-intereses{
     display: flex;
     flex-wrap: wrap;   
@@ -210,6 +289,7 @@
     border-radius: 10px;
     /*margin: 0 15px 15px 0;*/
     margin-left: 15px;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -223,41 +303,182 @@
     font-size: 30px;
     margin-bottom: 10px;
 }
-/*.sobremi button{
-    cursor: pointer;
-    background-color: transparent;
-    border: 2px solid #fff;
-    width: fit-content;
-    display: block;
-    margin: 20px auto;
-    padding: 10px 22px;
-    font-size: 16px;
-    color: #fff;
+
+.sobremi .fila .col .contenedor-intereses .interes svg{
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+
+.curriculum{
+    margin-top: 30px;
+}
+
+.curriculum .fila .izquierda{
+    border-right: 1px solid #252A2E;
+}
+.curriculum .fila .derecha{
+    border-left: 1px solid #252A2E;
+}
+.curriculum .fila .item{
+    padding: 25px;
+    margin-bottom: 30px;
+    background-color: #252A2E;
     position: relative;
-    z-index: 10;
     border-radius: 10px;
 }
-.sobremi button .overlay{
+.curriculum .fila .item h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.curriculum .fila .item .casa{
+    color: #cf7b0e;
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+}
+.curriculum .fila .item .fecha{
+    display: block;
+    color: #cf7b0e;
+   
+    margin-bottom: 10px;
+}
+.curriculum .fila .item p{
+    line-height: 24px;
+}
+.curriculum .fila .izq{
+    border-right: 2px solid #cf7b0e;
+    margin-right: 20px;
+}
+.curriculum .fila .der{
+    border-left: 2px solid #cf7b0e;
+    margin-left: 20px;
+}
+.curriculum .fila .item .conectori{
+    height: 2px;
+    background-color: #cf7b0e;
+    width: 47px;
+    position: absolute;
+    top: 50%;
+    right: -47px;
+    z-index: 5;
+}
+.curriculum .fila .item .conectori .circuloi{
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #cf7b0e;
+    float: right;
+    position: relative;
+    bottom: 4px;
+}
+.curriculum .fila .item .conectord{
+    height: 2px;
+    background-color: #cf7b0e;
+    width: 47px;
+    position: absolute;
+    top: 50%;
+    left: -47px;
+    z-index: 5;
+}
+.curriculum .fila .item .conectord .circulod{
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #cf7b0e;
+    float: left;
+    position: relative;
+    bottom: 4px;
+}
+
+
+/* S K I L L S */
+
+#skills{
+    background: #252A2E;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+#skills .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+
+#skills h2{
+    font-size: 40px;
+    font-family: 'Caveat';
+    text-align: center;
+    padding: 20px 0;
+
+}
+
+#skills h3{
+    font-size: 28px;
+    font-family: 'Caveat';
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#skills .fila{
+    display: flex;
+}
+
+#skills .fila .col{
+    width: 50%;
+    padding: 0 30px;
+}
+
+
+
+#skills .fila .col .skill > span{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#skills .skill .barra-skill{
+    height: 8px;
+    width: 100%;
+    background-color: #131517;
+    position: relative;
+    margin-bottom: 30px;
+    margin-right: 0;
+}
+
+#skills .skill .progreso{
+    background-color: #cf7b0e;
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
-    height: 100%;
-    background-color: #cf7b0e;
-    z-index: -1;
-    transition: 1s;
-    border-radius: 9px;
+    height: 8px;
 }
-.sobremi button:hover .overlay{
-    width: 100%;
-}*/
 
+#skills .skill .barra-skill span{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color:#cf7b0e;
+    border-radius: 100%;
+    line-height: 40px;
+    text-align: center;
+    top: -17px;
+    right: -15px;
+    font-size: 14px;
+}
 
+efecto en habilidades
 
-
-
-
-
+.skills .skill .rhinoceros {
+    width: 0%;
+    animation: 2s forwards rhinoceros;
+}
+@keyframes rhinoceros {
+    from{width: 0%;}
+    to{width: 75%;}
+}
 
 
 

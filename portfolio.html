@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="estilo.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         
+        <link href="bootstrapdist\css\bootstrap.min.css" rel="stylesheet">
     </head>
 
     <body>
@@ -17,8 +18,9 @@
         <div class="contenedor-header">
             <header>
                 <div class="logo">
-                    <a href="#inicio">
-                        FLOR
+                    <a href="#inicio" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                        <img class="imglogo" src="IMG/Logo.png">
+                        <p typeWriter() id="logotyping" >#YoProgramo</p>
                     </a>
                 </div>
                 <nav id="nav">
@@ -29,13 +31,18 @@
                         <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
                         <li><a href="#proyectos" onclick="seleccionar()">PROYECTOS</a></li>
                         <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                        <li class="login"><button type="button" id="btnlogin" class="btn btn-outline-primary">Ingresar</button> </li>
                     </ul>
                 </nav>
                 <div class="nav-responsive" onclick="mostrarOcultarMenu()">
                     <i class="fa-solid fa-bars"></i>
                 </div>
+
+                
             </header>
         </div>
+
+
         <!-- SECCION INICIO -->
         <section id="inicio" class="inicio">
             <div class="contenido-banner">
@@ -56,15 +63,32 @@
                 </div>
             </div>
         </section>
+
+
         <!-- SECCION SOBRE MI-->
         <section id="sobremi" class="sobremi">
             <div class="contenido-seccion">
-                <h2>Sobre Mí</h2>
+                <h2>Sobre mí</h2>
     
                 <div class="fila">  
                     <div class="col">
-                        <h3>¿Quien soy?</h3>
-                        <p><span>Hola, soy Flor.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam unde soluta minima necessitatibus, voluptas consectetur vero officiis quas, explicabo deleniti repellendus aliquid debitis maiores numquam voluptate reprehenderit in delectus dolores.</p>
+                        <div>
+                            <ul>
+                                <li><h3>¿Quien soy?</h3></li>
+                                <li class="boton-edit" onclick="cambiar_parrafo()"><div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                                        <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+                                    </svg>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                        <p id="texto-quiensoy"><span>Hola, soy Flor.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam unde soluta minima necessitatibus, voluptas consectetur vero officiis quas, explicabo deleniti repellendus aliquid debitis maiores numquam voluptate reprehenderit in delectus dolores.</p>
+                        </div>
+                        <div>
+                            <input id="edit-quiensoy" type="text" oninput="myFunction2(this.value)" style="display:none">
+                        </div>
                     </div>  
                     <!-- intereses -->
                     <div class="col">
@@ -73,10 +97,17 @@
                             
                             <div class="interes">
                                 <i class="fa-solid fa-headphones"></i>
+                                <!--<i class="bi bi-headphones"></i>-->
+                                <!--<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
+                                    <path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5z"/>
+                                  </svg>-->
                                 <span>MUSICA</span>
                             </div>
                             <div class="interes">
                                 <i class="fa-solid fa-plane"></i>
+                                <!--<svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-airplane-fill" viewBox="0 0 16 16">
+                                    <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Z"/>
+                                  </svg>-->
                                 <span>VIAJAR</span>
                             </div>
                             <!--<div class="interes">
@@ -103,6 +134,77 @@
                         </div>
                     </div>
                 </div>
+
+
+                <!--EXPERIENCIA Y EDUCACION-->
+                <div class="curriculum">
+                    <div class="fila">
+
+                        <div class="col izquierda">
+                            <h3>Educación</h3>
+                            <div class="item izq">
+                                <h4>Arte y Multimedia</h4>
+                                <span class="casa">Universidad de Oxford</span>
+                                <span class="fecha">2005 - 2008</span>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+                                <div class="conectori">
+                                    <div class="circuloi"></div>
+                                </div>
+                            </div>
+                            <div class="item izq">
+                                <h4>Arte y Multimedia</h4>
+                                <span class="casa">Universidad de Oxford</span>
+                                <span class="fecha">2005 - 2008</span>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+                                <div class="conectori">
+                                    <div class="circuloi"></div>
+                                </div>
+                            </div>
+                            <div class="item izq">
+                                <h4>Arte y Multimedia</h4>
+                                <span class="casa">Universidad de Oxford</span>
+                                <span class="fecha">2005 - 2008</span>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+                                <div class="conectori">
+                                    <div class="circuloi"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col derecha">
+                            <h3 class="sub">Experiencia de trabajo</h3>
+                            <div class="item der">
+                                <h4>Front Developer</h4>
+                                <span class="casa">Nombre de Compañía</span>
+                                <span class="fecha">2005 - 2008</span>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+                                <div class="conectord">
+                                    <div class="circulod"></div>
+                                </div>
+                            </div>
+                            <div class="item der">
+                                <h4>Front Developer</h4>
+                                <span class="casa">Nombre de Compañía</span>
+                                <span class="fecha">2005 - 2008</span>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+                                <div class="conectord">
+                                    <div class="circulod"></div>
+                                </div>
+                            </div>
+                            <div class="item der">
+                                <h4>Front Developer</h4>
+                                <span class="casa">Nombre de Compañía</span>
+                                <span class="fecha">2005 - 2008</span>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+                                <div class="conectord">
+                                    <div class="circulod"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
                 <!--<button>
                     Descargar CV <i class="fa-solid fa-download"></i>
                     <span class="overlay"></span>
@@ -112,6 +214,143 @@
         </section>
 
         
+
+        <!-- SECCION SKILLS-->
+        <section id="skills">
+            <!-- HABILIDADES TECNICAS-->
+            <div class="contenido-seccion">
+                <h2>Skills</h2>
+
+                <div class="fila">
+                    <div class="col">
+                    <h3>Hard Skills</h3>
+                    <div class="skill">
+                        <span>Rhinoceros</span>
+                        <div class="barra-skill">
+                            <div class="progreso rhinoceros">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>SolidWorks</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>65%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Photoshop</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Illustrator</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Keyshot</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>70%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>HTML/CSS</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>40%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Javascript</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>30%</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col" >
+                        <h3>Soft Skills</h3>
+                        <div class="skill">
+                            <span>Trabajo en equipo</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>75%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Comunicación</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>70%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Creatividad</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>80%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Dedicación</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>90%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Capacidad resolutiva</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>70%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Pensamiento crítico y analítico</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>55%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Curiosidad</span>
+                            <div class="barra-skill">
+                                <div class="progreso">
+                                    <span>85%</span>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+                
+            </div>
+
+        </section>
+
+        
+      
     <script src="script.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    -->
     </body>
 </html>
